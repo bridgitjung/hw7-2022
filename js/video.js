@@ -78,6 +78,7 @@ volume.addEventListener("change", function(e) {
 	console.log("before volume = " + video.volume);
 	video.volume = e.currentTarget.value / 100;
 	console.log("after volume = " + video.volume);
+	document.getElementById("volume").innerHTML = video.volume * 100 + "%";
 })
 
 document.querySelector("#vintage").addEventListener("click", function() {
