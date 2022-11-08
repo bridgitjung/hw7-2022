@@ -26,6 +26,7 @@ function onOut() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
+	document.getElementById("volume").innerHTML = video.volume * 100 + "%";
 })
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -59,12 +60,14 @@ document.querySelector("#mute").addEventListener("click", function() {
 	video.muted = true;
 	console.log("muted")
 	console.log(video.volume);
+	document.getElementById("mute").innerHTML = document.getElementById("mute").innerHTML.replace('Mute', 'Unmute');
 	}
 
 	else {
 		video.muted = false;
 		console.log("unmuted");
 		console.log(video.volume);
+		document.getElementById("mute").innerHTML = document.getElementById("mute").innerHTML.replace('Unmute', 'Mute');
 	}
 })
 
